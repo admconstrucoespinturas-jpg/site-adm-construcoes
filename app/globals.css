@@ -1,0 +1,62 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: #000;
+  color: #fff;
+  font-family: var(--font-body, 'Barlow', sans-serif);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+:root {
+  --font-display: var(--font-barlow-condensed), 'Barlow Condensed', 'Arial Narrow', sans-serif;
+  --font-body:    var(--font-barlow), 'Barlow', Arial, sans-serif;
+  --font-ui:      var(--font-barlow-semi), 'Barlow Semi Condensed', sans-serif;
+
+  --color-gold:        #F5A623;
+  --color-gold-hover:  #FFBB44;
+  --color-surface-1:   #141414;
+  --color-surface-2:   #1E1E1E;
+  --color-border:      #2A2A2A;
+  --color-text-muted:  #5A5A5A;
+  --color-text-2:      #A0A0A0;
+  --color-success:     #4CAF50;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: #000; }
+::-webkit-scrollbar-thumb { background: #2A2A2A; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #F5A623; }
+
+/* Page animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+main { animation: fadeIn 0.35s ease both; }
+
+/* Responsive nav */
+@media (max-width: 768px) {
+  .adm-desktop-nav { display: none !important; }
+  .adm-hamburger   { display: flex !important; }
+}
+@media (min-width: 769px) {
+  .adm-mobile-menu { display: none !important; }
+}
+
+/* Responsive grids */
+@media (max-width: 900px) {
+  .adm-two-col     { grid-template-columns: 1fr !important; }
+  .adm-four-col    { grid-template-columns: repeat(2,1fr) !important; }
+  .adm-three-col   { grid-template-columns: 1fr !important; }
+  .adm-footer-grid { grid-template-columns: 1fr 1fr !important; }
+}
+@media (max-width: 600px) {
+  .adm-four-col    { grid-template-columns: 1fr !important; }
+  .adm-footer-grid { grid-template-columns: 1fr !important; }
+  .adm-stats-row   { flex-direction: column !important; gap: 20px !important; }
+}
+
+select option { background: #141414; color: #fff; }
+a { color: inherit; }
