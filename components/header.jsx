@@ -2,7 +2,8 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { LogoMark, Btn } from './ui'
+import Image from 'next/image'
+import { Btn } from './ui'
 import { WhatsApp, Menu, XIcon } from './icons'
 
 const NAV_LINKS = [
@@ -40,11 +41,11 @@ export default function Header() {
   return (
     <>
       <nav style={navStyle}>
-        <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: 10, textDecoration: 'none' }}>
-          <LogoMark size={36} />
-          <div style={{ textAlign: 'left' }}>
-            <div style={{ fontFamily: "var(--font-display, 'Barlow Condensed', sans-serif)", fontSize: 15, fontWeight: 800, letterSpacing: '0.06em', textTransform: 'uppercase', color: '#fff', lineHeight: 1.1 }}>ADM</div>
-            <div style={{ fontFamily: "var(--font-ui, 'Barlow Semi Condensed', sans-serif)", fontSize: 9, fontWeight: 500, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#F5A623' }}>Construções e Pintura</div>
+        <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: 12, textDecoration: 'none' }}>
+          <Image src="/logo.jpg" alt="ADM Construções e Pintura" width={46} height={46} style={{ objectFit: 'contain' }} />
+          <div style={{ display: 'flex', flexDirection: 'column', lineHeight: 1.15 }}>
+            <span style={{ fontFamily: "var(--font-display, 'Barlow Condensed', sans-serif)", fontWeight: 800, fontSize: 18, letterSpacing: '0.06em', textTransform: 'uppercase', color: '#fff' }}>ADM Construções</span>
+            <span style={{ fontFamily: "var(--font-ui, 'Barlow Semi Condensed', sans-serif)", fontWeight: 500, fontSize: 12, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#F5A623' }}>e Pintura</span>
           </div>
         </Link>
 

@@ -33,6 +33,8 @@ export const Filter     = (p) => <IC {...p}><polygon points="22 3 2 3 10 12.46 1
 export const Eye        = (p) => <IC {...p}><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></IC>
 export const Shield     = (p) => <IC {...p}><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></IC>
 
+export const Instagram = (p) => <IC {...p}><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></IC>
+
 export const WhatsApp = ({ size = 18, style }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor"
     style={{ display: 'inline-block', verticalAlign: 'middle', flexShrink: 0, ...style }}>
