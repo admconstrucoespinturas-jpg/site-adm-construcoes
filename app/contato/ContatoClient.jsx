@@ -59,7 +59,7 @@ export default function ContatoClient() {
               <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
                 {[
                   [<MapPin size={16} />, 'Endereço',    'Florianópolis, Santa Catarina — Brasil'],
-                  [<Clock size={16} />,  'Atendimento', 'Seg a Sáb: 8h às 18h'],
+                  [<Clock size={16} />,  'Atendimento', 'Seg–Sex: 8h às 18h | Sáb: 8h às 12h'],
                 ].map(([icon, label, val]) => (
                   <div key={label} style={{ display: 'flex', alignItems: 'flex-start', gap: 14, padding: '14px 16px', background: '#0A0A0A', borderRadius: 4, border: '1px solid #1A1A1A' }}>
                     <span style={{ color: '#F5A623', marginTop: 2, flexShrink: 0 }}>{icon}</span>
