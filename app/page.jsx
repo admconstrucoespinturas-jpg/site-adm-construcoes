@@ -167,7 +167,7 @@ export default function HomePage() {
               Tradição e<br /><span style={{ color: '#F5A623' }}>Confiança</span>
             </h2>
             <p style={{ fontSize: 15, color: '#A0A0A0', lineHeight: 1.85, marginBottom: 16 }}>
-              A ADM Construções e Pintura foi fundada por <strong style={{ color: '#fff' }}>Alysson Dajones</strong>, um profissional apaixonado pela construção civil. Com 11 anos de mercado em Florianópolis, consolidamos nossa reputação entregando obras com qualidade, responsabilidade e prazo.
+              A ADM Construções e Pintura foi fundada por <strong style={{ color: '#fff' }}>Alysson Dojines</strong>, um profissional apaixonado pela construção civil. Com 11 anos de mercado em Florianópolis, consolidamos nossa reputação entregando obras com qualidade, responsabilidade e prazo.
             </p>
             <p style={{ fontSize: 15, color: '#A0A0A0', lineHeight: 1.85, marginBottom: 36 }}>
               Cada projeto é tratado com atenção singular — do orçamento ao acabamento final.

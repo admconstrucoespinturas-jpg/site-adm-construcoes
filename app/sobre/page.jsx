@@ -3,11 +3,11 @@ import { Shield, Award, Users, TrendUp, WhatsApp, ArrowRight } from '@/component
 
 export const metadata = {
   title: 'Sobre a ADM',
-  description: 'Conheça a história da ADM Construções e Pintura. Fundada em 2015 por Alysson Dajones em Florianópolis, SC. 11 anos de experiência, 500+ obras entregues.',
+  description: 'Conheça a história da ADM Construções e Pintura. Fundada em 2015 por Alysson Dojines em Florianópolis, SC. 11 anos de experiência, 500+ obras entregues.',
 }
 
 const TIMELINE = [
-  { year: '2015', title: 'Fundação da ADM',       desc: 'Alysson Dajones funda a ADM Construções e Pintura em Florianópolis com foco em qualidade e relacionamento com o cliente.' },
+  { year: '2015', title: 'Fundação da ADM',       desc: 'Alysson Dojines funda a ADM Construções e Pintura em Florianópolis com foco em qualidade e relacionamento com o cliente.' },
   { year: '2017', title: 'Expansão de Serviços',   desc: 'Ampliamos o portfólio incluindo cerâmicas, porcelanatos e laminados, atendendo projetos residenciais completos.' },
   { year: '2019', title: '100 Obras Entregues',    desc: 'Marco importante — centésima obra entregue. Consolidamos nossa reputação na região de Florianópolis.' },
   { year: '2021', title: 'Equipe Especializada',   desc: 'Formamos equipes próprias e fixas para cada serviço, garantindo padronização e qualidade em todas as obras.' },
@@ -37,7 +37,7 @@ export default function SobrePage() {
                 Sobre a<br /><span style={{ color: '#F5A623' }}>ADM</span>
               </h1>
               <p style={{ fontSize: 16, color: '#A0A0A0', lineHeight: 1.85, marginBottom: 20 }}>
-                A <strong style={{ color: '#fff' }}>ADM Construções e Pintura</strong> nasceu da paixão de <strong style={{ color: '#fff' }}>Alysson Dajones</strong> pela construção civil. Fundada em 2015 em Florianópolis, a empresa cresceu com base em um princípio simples: fazer sempre o melhor trabalho possível.
+                A <strong style={{ color: '#fff' }}>ADM Construções e Pintura</strong> nasceu da paixão de <strong style={{ color: '#fff' }}>Alysson Dojines</strong> pela construção civil. Fundada em 2015 em Florianópolis, a empresa cresceu com base em um princípio simples: fazer sempre o melhor trabalho possível.
               </p>
               <p style={{ fontSize: 16, color: '#A0A0A0', lineHeight: 1.85, marginBottom: 36 }}>
                 Ao longo de 11 anos, construímos muito mais do que obras — construímos confiança. Cada cliente atendido é uma história de parceria e compromisso com a qualidade.
@@ -48,7 +48,7 @@ export default function SobrePage() {
             </div>
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
               <div style={{ width: 160, height: 160, borderRadius: '50%', background: '#141414', border: '3px solid #F5A623', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 24, boxShadow: '0 0 40px rgba(245,166,35,0.2)', fontSize: 72, fontFamily: "var(--font-display)", fontWeight: 900, color: '#F5A623' }}>A</div>
-              <div style={{ fontFamily: "var(--font-display)", fontSize: 26, fontWeight: 800, textTransform: 'uppercase', color: '#fff', marginBottom: 6 }}>Alysson Dajones</div>
+              <div style={{ fontFamily: "var(--font-display)", fontSize: 26, fontWeight: 800, textTransform: 'uppercase', color: '#fff', marginBottom: 6 }}>Alysson Dojines</div>
               <div style={{ fontFamily: "var(--font-ui)", fontSize: 12, fontWeight: 600, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#F5A623', marginBottom: 16 }}>Fundador &amp; Diretor Técnico</div>
               <p style={{ fontSize: 13, color: '#5A5A5A', lineHeight: 1.75, maxWidth: 300 }}>
                 Profissional com 11+ anos de experiência em construção civil, reformas e acabamentos. Supervisiona pessoalmente cada projeto.
