@@ -28,7 +28,7 @@ export const metadata = {
     default: 'ADM Construções e Pintura — Florianópolis, SC',
     template: '%s | ADM Construções e Pintura',
   },
-  description: 'Especialistas em construção civil, reformas, pinturas, cerâmicas, porcelanatos e laminados em Florianópolis, SC. 15 anos de experiência, 500+ obras entregues. Solicite seu orçamento.',
+  description: 'Especialistas em construção civil, reformas, pinturas, cerâmicas, porcelanatos e laminados em Florianópolis, SC. 11 anos de experiência, 500+ obras entregues. Solicite seu orçamento.',
   keywords: ['construção civil Florianópolis', 'reforma Florianópolis', 'pintura residencial Florianópolis', 'cerâmica piso Florianópolis', 'porcelanato Florianópolis', 'ADM Construções'],
   authors: [{ name: 'ADM Construções e Pintura' }],
   openGraph: {
@@ -36,7 +36,7 @@ export const metadata = {
     locale: 'pt_BR',
     siteName: 'ADM Construções e Pintura',
     title: 'ADM Construções e Pintura — Florianópolis, SC',
-    description: 'Especialistas em construção civil, reformas e acabamentos em Florianópolis, SC. 15 anos de experiência.',
+    description: 'Especialistas em construção civil, reformas e acabamentos em Florianópolis, SC. 11 anos de experiência.',
   },
   robots: { index: true, follow: true },
 }
@@ -49,7 +49,7 @@ const schema = {
   url: 'https://admconstrucoes.com.br',
   telephone: '+5548988467031',
   email: 'contato@admconstrucoes.com.br',
-  foundingDate: '2009',
+  foundingDate: '2015',
   address: {
     '@type': 'PostalAddress',
     addressLocality: 'Florianópolis',
@@ -58,8 +58,7 @@ const schema = {
   },
   areaServed: { '@type': 'AdministrativeArea', name: 'Grande Florianópolis, SC' },
   openingHoursSpecification: [
-    { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday','Tuesday','Wednesday','Thursday','Friday'], opens: '08:00', closes: '18:00' },
-    { '@type': 'OpeningHoursSpecification', dayOfWeek: 'Saturday', opens: '08:00', closes: '13:00' },
+    { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'], opens: '08:00', closes: '18:00' },
   ],
   hasOfferCatalog: {
     '@type': 'OfferCatalog',

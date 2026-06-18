@@ -1,7 +1,7 @@
 'use client'
 import { useState } from 'react'
 import { Btn, SectionLabel, GoldLine } from '@/components/ui'
-import { WhatsApp, MapPin, Clock, Mail, Check, ArrowRight } from '@/components/icons'
+import { WhatsApp, MapPin, Clock, Check, ArrowRight } from '@/components/icons'
 
 const iStyle = {
   background: '#141414', border: '1px solid #2A2A2A', borderRadius: 4,
@@ -16,14 +16,20 @@ const onF = e => { e.target.style.borderColor = '#F5A623'; e.target.style.boxSha
 const onB = e => { e.target.style.borderColor = '#2A2A2A'; e.target.style.boxShadow = 'none' }
 
 export default function ContatoClient() {
-  const [form, setForm] = useState({ nome: '', whatsapp: '', email: '', servico: '', area: '', mensagem: '' })
-  const [sent, setSent] = useState(false)
-  const [loading, setLoading] = useState(false)
+  const [form, setForm] = useState({ nome: '', whatsapp: '', servico: '', area: '', mensagem: '' })
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    setLoading(true)
-    setTimeout(() => { setLoading(false); setSent(true); setForm({ nome: '', whatsapp: '', email: '', servico: '', area: '', mensagem: '' }) }, 1400)
+    const linhas = [
+      'Olá! Gostaria de solicitar um orçamento.',
+      '',
+      `*Nome:* ${form.nome}`,
+      `*WhatsApp:* ${form.whatsapp}`,
+      form.servico ? `*Serviço:* ${form.servico}` : null,
+      form.area    ? `*Área:* ${form.area}`        : null,
+      form.mensagem ? `*Mensagem:* ${form.mensagem}` : null,
+    ].filter(Boolean).join('\n')
+    window.open(`https://wa.me/5548988467031?text=${encodeURIComponent(linhas)}`, '_blank')
   }
 
   return (
@@ -38,7 +44,7 @@ export default function ContatoClient() {
                 Solicite seu<br /><span style={{ color: '#F5A623' }}>Orçamento</span>
               </h1>
               <p style={{ fontSize: 15, color: '#A0A0A0', lineHeight: 1.85, marginBottom: 36 }}>
-                Preencha o formulário ou nos chame diretamente pelo WhatsApp. Respondemos em até 2 horas em dias úteis.
+                Preencha o formulário e fale diretamente com a gente pelo WhatsApp. Respondemos em até 2 horas.
               </p>
               <a href="https://wa.me/5548988467031" target="_blank" rel="noreferrer"
                 style={{ display: 'flex', alignItems: 'center', gap: 16, background: '#141414', border: '1px solid #25D366', borderRadius: 4, padding: '20px 24px', marginBottom: 16, textDecoration: 'none' }}>
@@ -53,8 +59,7 @@ export default function ContatoClient() {
               <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
                 {[
                   [<MapPin size={16} />, 'Endereço',    'Florianópolis, Santa Catarina — Brasil'],
-                  [<Clock size={16} />,  'Atendimento', 'Segunda a Sexta: 8h às 18h | Sáb: 8h às 13h'],
-                  [<Mail size={16} />,   'E-mail',      'contato@admconstrucoes.com.br'],
+                  [<Clock size={16} />,  'Atendimento', 'Seg a Sáb: 8h às 18h'],
                 ].map(([icon, label, val]) => (
                   <div key={label} style={{ display: 'flex', alignItems: 'flex-start', gap: 14, padding: '14px 16px', background: '#0A0A0A', borderRadius: 4, border: '1px solid #1A1A1A' }}>
                     <span style={{ color: '#F5A623', marginTop: 2, flexShrink: 0 }}>{icon}</span>
@@ -68,65 +73,46 @@ export default function ContatoClient() {
             </div>
 
             <div style={{ paddingTop: 16 }}>
-              {sent ? (
-                <div style={{ background: 'rgba(76,175,80,0.06)', border: '1px solid rgba(76,175,80,0.2)', borderRadius: 6, padding: '48px 32px', textAlign: 'center' }}>
-                  <div style={{ width: 64, height: 64, borderRadius: '50%', background: 'rgba(76,175,80,0.15)', border: '2px solid #4CAF50', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 20px', color: '#4CAF50' }}>
-                    <Check size={28} />
+              <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: 18 }}>
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
+                  <div>
+                    <label style={lStyle}>Nome completo *</label>
+                    <input style={iStyle} type="text" placeholder="Seu nome" value={form.nome} onChange={e => setForm({ ...form, nome: e.target.value })} required onFocus={onF} onBlur={onB} />
                   </div>
-                  <div style={{ fontFamily: "var(--font-display)", fontSize: 26, fontWeight: 800, textTransform: 'uppercase', color: '#fff', marginBottom: 10 }}>Mensagem Enviada!</div>
-                  <p style={{ fontSize: 14, color: '#A0A0A0', lineHeight: 1.75, marginBottom: 28 }}>
-                    Recebemos seu contato. Entraremos em resposta pelo WhatsApp em até 2 horas em dias úteis.
-                  </p>
-                  <Btn variant="whatsapp" href="https://wa.me/5548988467031" target="_blank" rel="noreferrer">
-                    <WhatsApp size={16} /> Chamar no WhatsApp
+                  <div>
+                    <label style={lStyle}>WhatsApp *</label>
+                    <input style={iStyle} type="tel" placeholder="(48) 9 0000-0000" value={form.whatsapp} onChange={e => setForm({ ...form, whatsapp: e.target.value })} required onFocus={onF} onBlur={onB} />
+                  </div>
+                </div>
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
+                  <div>
+                    <label style={lStyle}>Serviço desejado *</label>
+                    <select style={{ ...iStyle, cursor: 'pointer' }} value={form.servico} onChange={e => setForm({ ...form, servico: e.target.value })} required onFocus={onF} onBlur={onB}>
+                      <option value="">Selecione...</option>
+                      {['Construção Civil','Reforma','Pintura','Cerâmica','Porcelanato','Laminado','Mais de um serviço'].map(o => <option key={o}>{o}</option>)}
+                    </select>
+                  </div>
+                  <div>
+                    <label style={lStyle}>Área aprox. (m²)</label>
+                    <input style={iStyle} type="text" placeholder="Ex: 80m²" value={form.area} onChange={e => setForm({ ...form, area: e.target.value })} onFocus={onF} onBlur={onB} />
+                  </div>
+                </div>
+                <div>
+                  <label style={lStyle}>Descreva o projeto *</label>
+                  <textarea style={{ ...iStyle, resize: 'vertical', minHeight: 120 }} placeholder="Conte detalhes do seu projeto — tipo de obra, local, prazo desejado..." value={form.mensagem} onChange={e => setForm({ ...form, mensagem: e.target.value })} required onFocus={onF} onBlur={onB} />
+                </div>
+                <div style={{ display: 'flex', gap: 12, alignItems: 'center', flexWrap: 'wrap' }}>
+                  <Btn variant="whatsapp" size="lg">
+                    <WhatsApp size={16} /> Enviar pelo WhatsApp
+                  </Btn>
+                  <Btn variant="primary" size="md" href="https://wa.me/5548988467031" target="_blank" rel="noreferrer">
+                    <ArrowRight size={14} /> Chamar Direto
                   </Btn>
                 </div>
-              ) : (
-                <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: 18 }}>
-                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
-                    <div>
-                      <label style={lStyle}>Nome completo *</label>
-                      <input style={iStyle} type="text" placeholder="Seu nome" value={form.nome} onChange={e => setForm({ ...form, nome: e.target.value })} required onFocus={onF} onBlur={onB} />
-                    </div>
-                    <div>
-                      <label style={lStyle}>WhatsApp *</label>
-                      <input style={iStyle} type="tel" placeholder="(48) 9 0000-0000" value={form.whatsapp} onChange={e => setForm({ ...form, whatsapp: e.target.value })} required onFocus={onF} onBlur={onB} />
-                    </div>
-                  </div>
-                  <div>
-                    <label style={lStyle}>E-mail</label>
-                    <input style={iStyle} type="email" placeholder="seu@email.com" value={form.email} onChange={e => setForm({ ...form, email: e.target.value })} onFocus={onF} onBlur={onB} />
-                  </div>
-                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
-                    <div>
-                      <label style={lStyle}>Serviço desejado *</label>
-                      <select style={{ ...iStyle, cursor: 'pointer' }} value={form.servico} onChange={e => setForm({ ...form, servico: e.target.value })} required onFocus={onF} onBlur={onB}>
-                        <option value="">Selecione...</option>
-                        {['Construção Civil','Reforma','Pintura','Cerâmica','Porcelanato','Laminado','Mais de um serviço'].map(o => <option key={o}>{o}</option>)}
-                      </select>
-                    </div>
-                    <div>
-                      <label style={lStyle}>Área aprox. (m²)</label>
-                      <input style={iStyle} type="text" placeholder="Ex: 80m²" value={form.area} onChange={e => setForm({ ...form, area: e.target.value })} onFocus={onF} onBlur={onB} />
-                    </div>
-                  </div>
-                  <div>
-                    <label style={lStyle}>Descreva o projeto *</label>
-                    <textarea style={{ ...iStyle, resize: 'vertical', minHeight: 120 }} placeholder="Conte detalhes do seu projeto — tipo de obra, local, prazo desejado..." value={form.mensagem} onChange={e => setForm({ ...form, mensagem: e.target.value })} required onFocus={onF} onBlur={onB} />
-                  </div>
-                  <div style={{ display: 'flex', gap: 12, alignItems: 'center', flexWrap: 'wrap' }}>
-                    <Btn variant="primary" size="lg" onClick={() => {}} style={{ opacity: loading ? 0.7 : 1, pointerEvents: loading ? 'none' : 'auto' }}>
-                      {loading ? 'Enviando...' : <><ArrowRight size={14} /> Enviar Mensagem</>}
-                    </Btn>
-                    <Btn variant="whatsapp" size="md" href="https://wa.me/5548988467031" target="_blank" rel="noreferrer">
-                      <WhatsApp size={15} /> Prefiro WhatsApp
-                    </Btn>
-                  </div>
-                  <div style={{ fontSize: 11, color: '#3A3A3A', lineHeight: 1.6 }}>
-                    Ao enviar, você concorda em receber contato pelo WhatsApp informado acima.
-                  </div>
-                </form>
-              )}
+                <div style={{ fontSize: 11, color: '#3A3A3A', lineHeight: 1.6 }}>
+                  Ao enviar, você será direcionado ao WhatsApp com os dados preenchidos.
+                </div>
+              </form>
             </div>
           </div>
         </div>

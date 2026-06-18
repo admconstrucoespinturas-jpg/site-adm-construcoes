@@ -58,7 +58,7 @@ export default function Footer() {
               {[
                 [<MapPin size={14} />, 'Florianópolis, SC'],
                 [<Phone size={14} />,  '(48) 98846-7031'  ],
-                [<Clock size={14} />,  'Seg–Sex: 8h às 18h'],
+                [<Clock size={14} />,  'Seg–Sáb: 8h às 18h'],
               ].map(([icon, txt]) => (
                 <div key={txt} style={{ display: 'flex', alignItems: 'center', gap: 8, fontSize: 13, color: '#5A5A5A' }}>
                   <span style={{ color: '#F5A623', flexShrink: 0 }}>{icon}</span>{txt}

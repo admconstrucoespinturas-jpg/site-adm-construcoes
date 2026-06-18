@@ -3,16 +3,16 @@ import { Shield, Award, Users, TrendUp, WhatsApp, ArrowRight } from '@/component
 
 export const metadata = {
   title: 'Sobre a ADM',
-  description: 'Conheça a história da ADM Construções e Pintura. Fundada em 2009 por Alysson Dajones em Florianópolis, SC. 15 anos de experiência, 500+ obras entregues.',
+  description: 'Conheça a história da ADM Construções e Pintura. Fundada em 2015 por Alysson Dajones em Florianópolis, SC. 11 anos de experiência, 500+ obras entregues.',
 }
 
 const TIMELINE = [
-  { year: '2009', title: 'Fundação da ADM',       desc: 'Alysson Dajones funda a ADM Construções e Pintura em Florianópolis com foco em qualidade e relacionamento com o cliente.' },
-  { year: '2012', title: 'Expansão de Serviços',   desc: 'Ampliamos o portfólio incluindo cerâmicas, porcelanatos e laminados, atendendo projetos residenciais completos.' },
-  { year: '2015', title: '100 Obras Entregues',    desc: 'Marco importante — centésima obra entregue. Consolidamos nossa reputação na região de Florianópolis.' },
-  { year: '2018', title: 'Equipe Especializada',   desc: 'Formamos equipes próprias e fixas para cada serviço, garantindo padronização e qualidade em todas as obras.' },
-  { year: '2021', title: 'Projetos Comerciais',    desc: 'Iniciamos atendimento a grandes projetos comerciais, restaurantes, escritórios e lojas em toda a Grande Florianópolis.' },
-  { year: '2024', title: '15 Anos de Excelência',  desc: '500+ projetos entregues, equipe consolidada e referência no mercado catarinense de construção e reforma.' },
+  { year: '2015', title: 'Fundação da ADM',       desc: 'Alysson Dajones funda a ADM Construções e Pintura em Florianópolis com foco em qualidade e relacionamento com o cliente.' },
+  { year: '2017', title: 'Expansão de Serviços',   desc: 'Ampliamos o portfólio incluindo cerâmicas, porcelanatos e laminados, atendendo projetos residenciais completos.' },
+  { year: '2019', title: '100 Obras Entregues',    desc: 'Marco importante — centésima obra entregue. Consolidamos nossa reputação na região de Florianópolis.' },
+  { year: '2021', title: 'Equipe Especializada',   desc: 'Formamos equipes próprias e fixas para cada serviço, garantindo padronização e qualidade em todas as obras.' },
+  { year: '2023', title: 'Projetos Comerciais',    desc: 'Expandimos para grandes projetos comerciais, restaurantes, escritórios e lojas em toda a Grande Florianópolis.' },
+  { year: '2026', title: '11 Anos de Excelência',  desc: '500+ projetos entregues, equipe consolidada e referência no mercado catarinense de construção e reforma.' },
 ]
 
 const VALUES = [
@@ -37,10 +37,10 @@ export default function SobrePage() {
                 Sobre a<br /><span style={{ color: '#F5A623' }}>ADM</span>
               </h1>
               <p style={{ fontSize: 16, color: '#A0A0A0', lineHeight: 1.85, marginBottom: 20 }}>
-                A <strong style={{ color: '#fff' }}>ADM Construções e Pintura</strong> nasceu da paixão de <strong style={{ color: '#fff' }}>Alysson Dajones</strong> pela construção civil. Fundada em 2009 em Florianópolis, a empresa cresceu com base em um princípio simples: fazer sempre o melhor trabalho possível.
+                A <strong style={{ color: '#fff' }}>ADM Construções e Pintura</strong> nasceu da paixão de <strong style={{ color: '#fff' }}>Alysson Dajones</strong> pela construção civil. Fundada em 2015 em Florianópolis, a empresa cresceu com base em um princípio simples: fazer sempre o melhor trabalho possível.
               </p>
               <p style={{ fontSize: 16, color: '#A0A0A0', lineHeight: 1.85, marginBottom: 36 }}>
-                Ao longo de 15 anos, construímos muito mais do que obras — construímos confiança. Cada cliente atendido é uma história de parceria e compromisso com a qualidade.
+                Ao longo de 11 anos, construímos muito mais do que obras — construímos confiança. Cada cliente atendido é uma história de parceria e compromisso com a qualidade.
               </p>
               <Btn variant="whatsapp" href="https://wa.me/5548988467031" target="_blank" rel="noreferrer">
                 <WhatsApp size={16} /> Falar com Alysson
@@ -51,10 +51,10 @@ export default function SobrePage() {
               <div style={{ fontFamily: "var(--font-display)", fontSize: 26, fontWeight: 800, textTransform: 'uppercase', color: '#fff', marginBottom: 6 }}>Alysson Dajones</div>
               <div style={{ fontFamily: "var(--font-ui)", fontSize: 12, fontWeight: 600, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#F5A623', marginBottom: 16 }}>Fundador &amp; Diretor Técnico</div>
               <p style={{ fontSize: 13, color: '#5A5A5A', lineHeight: 1.75, maxWidth: 300 }}>
-                Profissional com 15+ anos de experiência em construção civil, reformas e acabamentos. Supervisiona pessoalmente cada projeto.
+                Profissional com 11+ anos de experiência em construção civil, reformas e acabamentos. Supervisiona pessoalmente cada projeto.
               </p>
               <div style={{ display: 'flex', gap: 24, marginTop: 24 }}>
-                {[['15+', 'Anos'], ['500+', 'Obras'], ['100%', 'Dedicação']].map(([n, l]) => (
+                {[['11+', 'Anos'], ['500+', 'Obras'], ['100%', 'Dedicação']].map(([n, l]) => (
                   <div key={l} style={{ textAlign: 'center' }}>
                     <div style={{ fontFamily: "var(--font-display)", fontSize: 24, fontWeight: 900, color: '#F5A623', lineHeight: 1 }}>{n}</div>
                     <div style={{ fontSize: 10, color: '#5A5A5A', fontFamily: "var(--font-ui)", letterSpacing: '0.1em', textTransform: 'uppercase', marginTop: 3 }}>{l}</div>
@@ -92,7 +92,7 @@ export default function SobrePage() {
           <SectionLabel>Nossa Trajetória</SectionLabel>
           <GoldLine />
           <h2 style={{ fontFamily: "var(--font-display)", fontSize: 'clamp(28px,4vw,52px)', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '-0.01em', lineHeight: 1, marginBottom: 64 }}>
-            15 Anos de<br /><span style={{ color: '#F5A623' }}>História</span>
+            11 Anos de<br /><span style={{ color: '#F5A623' }}>História</span>
           </h2>
           <div style={{ position: 'relative' }}>
             <div style={{ position: 'absolute', left: 119, top: 0, bottom: 0, width: 2, background: 'linear-gradient(to bottom,#F5A623,rgba(245,166,35,0.1))' }} />
