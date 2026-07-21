@@ -66,7 +66,7 @@ function ServiceCard({ s, expanded, toggle }) {
       <div style={{ maxHeight: expanded ? 600 : 0, overflow: 'hidden', transition: 'max-height 400ms ease' }}>
         <div style={{ padding: '0 28px 28px 76px', borderTop: '1px solid #1E1E1E' }}>
           <p style={{ fontSize: 14, color: '#A0A0A0', lineHeight: 1.85, margin: '20px 0 20px' }}>{s.desc}</p>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px 24px' }}>
+          <div className="adm-two-col" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px 24px' }}>
             {s.items.map(item => (
               <div key={item} style={{ display: 'flex', alignItems: 'center', gap: 10, fontSize: 13, color: '#fff' }}>
                 <span style={{ color: '#F5A623', flexShrink: 0 }}><Check size={14} /></span>{item}
@@ -122,8 +122,8 @@ export default function ServicosClient() {
               <WhatsApp size={16} /> Iniciar Projeto
             </Btn>
           </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5,1fr)', position: 'relative' }}>
-            <div style={{ position: 'absolute', top: 32, left: '10%', right: '10%', height: 2, background: 'linear-gradient(to right,#F5A623,rgba(245,166,35,0.2))', zIndex: 0 }} />
+          <div className="adm-steps-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(5,1fr)', position: 'relative' }}>
+            <div className="adm-steps-line" style={{ position: 'absolute', top: 32, left: '10%', right: '10%', height: 2, background: 'linear-gradient(to right,#F5A623,rgba(245,166,35,0.2))', zIndex: 0 }} />
             {STEPS.map((s, i) => (
               <div key={i} style={{ position: 'relative', zIndex: 1, padding: '0 12px', textAlign: 'center' }}>
                 <div style={{ width: 64, height: 64, borderRadius: '50%', background: '#141414', border: '2px solid #F5A623', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 20px', boxShadow: '0 0 20px rgba(245,166,35,0.2)' }}>

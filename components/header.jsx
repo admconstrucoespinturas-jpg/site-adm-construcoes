@@ -40,7 +40,7 @@ export default function Header() {
 
   return (
     <>
-      <nav style={navStyle}>
+      <nav style={navStyle} className="adm-navbar">
         <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: 12, textDecoration: 'none' }}>
           <Image src="/logo.jpg" alt="ADM Construções e Pintura" width={46} height={46} style={{ objectFit: 'contain' }} />
           <div style={{ display: 'flex', flexDirection: 'column', lineHeight: 1.15 }}>

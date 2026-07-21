@@ -51,11 +51,21 @@ main { animation: fadeIn 0.35s ease both; }
   .adm-four-col    { grid-template-columns: repeat(2,1fr) !important; }
   .adm-three-col   { grid-template-columns: 1fr !important; }
   .adm-footer-grid { grid-template-columns: 1fr 1fr !important; }
+  .adm-six-col     { grid-template-columns: repeat(3,1fr) !important; }
+  .adm-steps-grid  { grid-template-columns: 1fr !important; gap: 32px !important; }
+  .adm-steps-line  { display: none !important; }
 }
 @media (max-width: 600px) {
   .adm-four-col    { grid-template-columns: 1fr !important; }
   .adm-footer-grid { grid-template-columns: 1fr !important; }
   .adm-stats-row   { flex-direction: column !important; gap: 20px !important; }
+  .adm-stats-row > div { border-right: none !important; padding-left: 0 !important; padding-right: 0 !important; }
+  .adm-six-col     { grid-template-columns: repeat(2,1fr) !important; }
+  .adm-form-row    { grid-template-columns: 1fr !important; }
+  .adm-timeline-row  { grid-template-columns: 56px 22px 1fr !important; }
+  .adm-timeline-year { font-size: 17px !important; padding-right: 10px !important; }
+  .adm-timeline-line { left: 67px !important; }
+  .adm-navbar         { padding: 0 16px !important; }
 }
 
 select option { background: #141414; color: #fff; }

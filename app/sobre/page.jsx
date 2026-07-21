@@ -95,11 +95,11 @@ export default function SobrePage() {
             11 Anos de<br /><span style={{ color: '#F5A623' }}>História</span>
           </h2>
           <div style={{ position: 'relative' }}>
-            <div style={{ position: 'absolute', left: 119, top: 0, bottom: 0, width: 2, background: 'linear-gradient(to bottom,#F5A623,rgba(245,166,35,0.1))' }} />
+            <div className="adm-timeline-line" style={{ position: 'absolute', left: 119, top: 0, bottom: 0, width: 2, background: 'linear-gradient(to bottom,#F5A623,rgba(245,166,35,0.1))' }} />
             <div style={{ display: 'flex', flexDirection: 'column', gap: 40 }}>
               {TIMELINE.map((t, i) => (
-                <div key={i} style={{ display: 'grid', gridTemplateColumns: '120px 40px 1fr', alignItems: 'flex-start' }}>
-                  <div style={{ fontFamily: "var(--font-display)", fontSize: 28, fontWeight: 900, color: '#F5A623', textAlign: 'right', paddingRight: 24, lineHeight: 1, paddingTop: 2 }}>{t.year}</div>
+                <div key={i} className="adm-timeline-row" style={{ display: 'grid', gridTemplateColumns: '120px 40px 1fr', alignItems: 'flex-start' }}>
+                  <div className="adm-timeline-year" style={{ fontFamily: "var(--font-display)", fontSize: 28, fontWeight: 900, color: '#F5A623', textAlign: 'right', paddingRight: 24, lineHeight: 1, paddingTop: 2 }}>{t.year}</div>
                   <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', zIndex: 1 }}>
                     <div style={{ width: 16, height: 16, borderRadius: '50%', background: '#F5A623', border: '3px solid #000', flexShrink: 0, marginTop: 4, boxShadow: '0 0 12px rgba(245,166,35,0.5)' }} />
                   </div>

@@ -74,7 +74,7 @@ export default function ContatoClient() {
 
             <div style={{ paddingTop: 16 }}>
               <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: 18 }}>
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
+                <div className="adm-form-row" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
                   <div>
                     <label style={lStyle}>Nome completo *</label>
                     <input style={iStyle} type="text" placeholder="Seu nome" value={form.nome} onChange={e => setForm({ ...form, nome: e.target.value })} required onFocus={onF} onBlur={onB} />
@@ -84,7 +84,7 @@ export default function ContatoClient() {
                     <input style={iStyle} type="tel" placeholder="(48) 9 0000-0000" value={form.whatsapp} onChange={e => setForm({ ...form, whatsapp: e.target.value })} required onFocus={onF} onBlur={onB} />
                   </div>
                 </div>
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
+                <div className="adm-form-row" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
                   <div>
                     <label style={lStyle}>Serviço desejado *</label>
                     <select style={{ ...iStyle, cursor: 'pointer' }} value={form.servico} onChange={e => setForm({ ...form, servico: e.target.value })} required onFocus={onF} onBlur={onB}>

@@ -204,7 +204,7 @@ export default function PortfolioClient() {
 
       <section style={{ background: '#000', padding: '48px 0 96px' }}>
         <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 32px' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 16 }}>
+          <div className="adm-three-col" style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 16 }}>
             {visible.map((p, i) => <ProjectCard key={i} p={p} onOpen={() => setSelected(p)} />)}
           </div>
           {visible.length === 0 && (

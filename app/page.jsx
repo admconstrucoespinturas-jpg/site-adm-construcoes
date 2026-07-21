@@ -109,7 +109,7 @@ export default function HomePage() {
                 Ver Portfólio <ChevRight size={16} />
               </Btn>
             </div>
-            <div style={{ display: 'flex', gap: 0, marginTop: 64, borderTop: '1px solid #1A1A1A', paddingTop: 32 }}>
+            <div className="adm-stats-row" style={{ display: 'flex', gap: 0, marginTop: 64, borderTop: '1px solid #1A1A1A', paddingTop: 32 }}>
               {[['11+', 'Anos de Experiência'], ['500+', 'Projetos Entregues'], ['100%', 'Satisfação Garantida'], ['Florianópolis', 'Santa Catarina']].map(([n, l], i) => (
                 <div key={l} style={{ flex: 1, paddingRight: 32, borderRight: i < 3 ? '1px solid #1A1A1A' : 'none', paddingLeft: i > 0 ? 32 : 0 }}>
                   <div style={{ fontFamily: "var(--font-display)", fontSize: 38, fontWeight: 900, color: '#F5A623', lineHeight: 1 }}>{n}</div>
@@ -124,7 +124,7 @@ export default function HomePage() {
       {/* Services Strip */}
       <section style={{ background: '#141414', borderTop: '1px solid #1E1E1E', borderBottom: '1px solid #1E1E1E', padding: '32px 0' }}>
         <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 32px' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(6,1fr)' }}>
+          <div className="adm-six-col" style={{ display: 'grid', gridTemplateColumns: 'repeat(6,1fr)' }}>
             {SERVICES_SHORT.map((s, i) => (
               <Link key={s.label} href="/servicos" style={{ textDecoration: 'none', borderRight: i < 5 ? '1px solid #2A2A2A' : 'none', padding: '16px 20px', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 10 }}
                 onMouseEnter={e => { e.currentTarget.style.background = '#1A1A1A' }}
@@ -151,7 +151,7 @@ export default function HomePage() {
             </div>
             <Btn variant="outline" href="/portfolio">Ver Todos <ArrowRight size={14} /></Btn>
           </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: 14 }}>
+          <div className="adm-four-col" style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: 14 }}>
             {PREVIEW_PROJECTS.map((p, i) => <ProjectCard key={i} p={p} />)}
           </div>
         </div>
@@ -159,7 +159,7 @@ export default function HomePage() {
 
       {/* About */}
       <section style={{ background: '#000', padding: '96px 0', borderTop: '1px solid #141414' }}>
-        <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 32px', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 96, alignItems: 'center' }}>
+        <div className="adm-two-col" style={{ maxWidth: 1200, margin: '0 auto', padding: '0 32px', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 96, alignItems: 'center' }}>
           <div>
             <SectionLabel>Quem Somos</SectionLabel>
             <GoldLine />
@@ -199,7 +199,7 @@ export default function HomePage() {
           <h2 style={{ fontFamily: "var(--font-display)", fontSize: 'clamp(28px,4vw,48px)', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '-0.01em', lineHeight: 1, marginBottom: 48 }}>
             O que nossos<br /><span style={{ color: '#F5A623' }}>Clientes Dizem</span>
           </h2>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 20 }}>
+          <div className="adm-three-col" style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 20 }}>
             {TESTIMONIALS.map((t, i) => (
               <div key={i} style={{ background: '#141414', border: '1px solid #2A2A2A', borderRadius: 4, padding: '28px 24px' }}>
                 <div style={{ display: 'flex', gap: 3, marginBottom: 14 }}>
