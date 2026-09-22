@@ -53,6 +53,9 @@ export const metadata = {
     images: ['/og-image.jpg'],
   },
   robots: { index: true, follow: true },
+  verification: {
+    google: '3eyhC1UhUPt38_gRq0vJBGd6WCcU9SYuTEbVX79WzvU',
+  },
 }
 
 const schema = {
