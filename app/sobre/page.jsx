@@ -4,6 +4,7 @@ import { Shield, Award, Users, TrendUp, WhatsApp, ArrowRight } from '@/component
 export const metadata = {
   title: 'Sobre a ADM',
   description: 'Conheça a história da ADM Construções e Pintura. Fundada em 2015 por Alysson Dojines em Florianópolis, SC. 11 anos de experiência, 500+ obras entregues.',
+  alternates: { canonical: '/sobre' },
 }
 
 const TIMELINE = [

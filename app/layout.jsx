@@ -1,7 +1,11 @@
 import { Barlow, Barlow_Condensed, Barlow_Semi_Condensed } from 'next/font/google'
+import { GoogleAnalytics } from '@next/third-parties/google'
 import Header from '@/components/header'
 import Footer from '@/components/footer'
 import FloatingWA from '@/components/floating-wa'
+import MetaPixel from '@/components/meta-pixel'
+import ClickTracker from '@/components/click-tracker'
+import UtmCapture from '@/components/utm-capture'
 import './globals.css'
 
 const barlow = Barlow({
@@ -24,6 +28,7 @@ const barlowSemi = Barlow_Semi_Condensed({
 })
 
 export const metadata = {
+  metadataBase: new URL('https://www.admconstrucoes.com.br'),
   title: {
     default: 'ADM Construções e Pintura — Florianópolis, SC',
     template: '%s | ADM Construções e Pintura',
@@ -37,6 +42,15 @@ export const metadata = {
     siteName: 'ADM Construções e Pintura',
     title: 'ADM Construções e Pintura — Florianópolis, SC',
     description: 'Especialistas em construção civil, reformas e acabamentos em Florianópolis, SC. 11 anos de experiência.',
+    // TODO: public/og-image.jpg ainda não existe — colocar foto real de obra, 1200x630
+    images: [{ url: '/og-image.jpg', width: 1200, height: 630, alt: 'ADM Construções e Pintura' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'ADM Construções e Pintura — Florianópolis, SC',
+    description: 'Especialistas em construção civil, reformas e acabamentos em Florianópolis, SC. 11 anos de experiência.',
+    // TODO: public/og-image.jpg ainda não existe — colocar foto real de obra, 1200x630
+    images: ['/og-image.jpg'],
   },
   robots: { index: true, follow: true },
 }
@@ -46,7 +60,7 @@ const schema = {
   '@type': 'LocalBusiness',
   name: 'ADM Construções e Pintura',
   description: 'Especialistas em construção civil, reformas, pinturas, cerâmicas, porcelanatos e laminados em Florianópolis, SC.',
-  url: 'https://admconstrucoes.com.br',
+  url: 'https://www.admconstrucoes.com.br',
   telephone: '+5548988467031',
   email: 'contato@admconstrucoes.com.br',
   foundingDate: '2015',
@@ -71,6 +85,12 @@ const schema = {
   sameAs: ['https://wa.me/5548988467031'],
 }
 
+const gaId = process.env.NEXT_PUBLIC_GA_ID
+const validGaId = gaId && /^G-[A-Za-z0-9]+$/.test(gaId) ? gaId : null
+
+const pixelId = process.env.NEXT_PUBLIC_META_PIXEL_ID
+const validPixelId = pixelId && /^\d+$/.test(pixelId) ? pixelId : null
+
 export default function RootLayout({ children }) {
   return (
     <html lang="pt-BR" className={`${barlow.variable} ${barlowCondensed.variable} ${barlowSemi.variable}`}>
@@ -85,6 +105,10 @@ export default function RootLayout({ children }) {
         <main>{children}</main>
         <Footer />
         <FloatingWA />
+        <UtmCapture />
+        <ClickTracker />
+        {validPixelId && <MetaPixel pixelId={validPixelId} />}
+        {validGaId && <GoogleAnalytics gaId={validGaId} />}
       </body>
     </html>
   )
