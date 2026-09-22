@@ -2,6 +2,8 @@
 import { useState } from 'react'
 import { Btn, SectionLabel, GoldLine } from '@/components/ui'
 import { WhatsApp, MapPin, Clock, Check, ArrowRight } from '@/components/icons'
+import { trackLead } from '@/lib/track'
+import { getStoredUtm } from '@/lib/utm'
 
 const iStyle = {
   background: '#141414', border: '1px solid #2A2A2A', borderRadius: 4,
@@ -18,8 +20,9 @@ const onB = e => { e.target.style.borderColor = '#2A2A2A'; e.target.style.boxSha
 export default function ContatoClient() {
   const [form, setForm] = useState({ nome: '', whatsapp: '', servico: '', area: '', mensagem: '' })
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
+
     const linhas = [
       'Olá! Gostaria de solicitar um orçamento.',
       '',
@@ -29,7 +32,30 @@ export default function ContatoClient() {
       form.area    ? `*Área:* ${form.area}`        : null,
       form.mensagem ? `*Mensagem:* ${form.mensagem}` : null,
     ].filter(Boolean).join('\n')
-    window.open(`https://wa.me/5548988467031?text=${encodeURIComponent(linhas)}`, '_blank')
+    const whatsappUrl = `https://wa.me/5548988467031?text=${encodeURIComponent(linhas)}`
+
+    try {
+      const payload = {
+        nome: form.nome,
+        whatsapp: form.whatsapp,
+        servico: form.servico,
+        area: form.area,
+        descricao: form.mensagem,
+        ...getStoredUtm(),
+      }
+      const postPromise = fetch('/api/lead', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+        keepalive: true,
+      }).catch(() => {})
+      await Promise.race([postPromise, new Promise((resolve) => setTimeout(resolve, 1500))])
+    } catch {
+      // gravação é melhor esforço — nunca deve impedir o redirecionamento ao WhatsApp
+    } finally {
+      trackLead(form.servico)
+      window.location.href = whatsappUrl
+    }
   }
 
   return (
