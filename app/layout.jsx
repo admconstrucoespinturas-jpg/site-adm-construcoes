@@ -42,14 +42,12 @@ export const metadata = {
     siteName: 'ADM Construções e Pintura',
     title: 'ADM Construções e Pintura — Florianópolis, SC',
     description: 'Especialistas em construção civil, reformas e acabamentos em Florianópolis, SC. 11 anos de experiência.',
-    // TODO: public/og-image.jpg ainda não existe — colocar foto real de obra, 1200x630
     images: [{ url: '/og-image.jpg', width: 1200, height: 630, alt: 'ADM Construções e Pintura' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'ADM Construções e Pintura — Florianópolis, SC',
     description: 'Especialistas em construção civil, reformas e acabamentos em Florianópolis, SC. 11 anos de experiência.',
-    // TODO: public/og-image.jpg ainda não existe — colocar foto real de obra, 1200x630
     images: ['/og-image.jpg'],
   },
   robots: { index: true, follow: true },
